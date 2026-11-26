@@ -2,7 +2,6 @@ package edu.byu.cs.sonar;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
@@ -15,7 +14,7 @@ class CustomFileReader {
     /**
      * The String path
      */
-    private String path;
+    final String path;
 
     /**
      * The sentence that will be constructed
