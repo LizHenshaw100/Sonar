@@ -65,4 +65,23 @@ class CustomFileReaderTest {
         boolean bool = sut.equals(sut);
         assertTrue(bool);
     }
+
+    @Test
+    void equalsDifferentClass() {
+        assertNotEquals(sut, "readMe1.txt");
+    }
+
+    @Test
+    void equalsDifferentSentence() {
+        CustomFileReader other = new CustomFileReader("readMe1.txt");
+        other.setNewSentence("Something else");
+        assertNotEquals(sut, other);
+    }
+
+    @Test
+    void equalsDifferentCount() throws FileNotFoundException {
+        CustomFileReader other = new CustomFileReader("readMe1.txt");
+        other.howManyWordsInFile();
+        assertNotEquals(sut, other);
+    }
 }
