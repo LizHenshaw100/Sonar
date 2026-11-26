@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.Objects;
 import java.util.Scanner;
 
 /**
@@ -114,7 +115,7 @@ class CustomFileReader {
      *
      * @return the number of words in the dictionary
      */
-    private int getCount() {
+    int getCount() {
         return count;
     }
 
@@ -123,7 +124,7 @@ class CustomFileReader {
      *
      * @return the number of words in the dictionary
      */
-    private String getPath() {
+    String getPath() {
         return path;
     }
 
@@ -136,7 +137,7 @@ class CustomFileReader {
      */
     @Override
     public int hashCode() {
-        return Integer.parseInt(newSentence) * count * 3;
+        return Objects.hash(newSentence, count, path);
     }
 
     /**

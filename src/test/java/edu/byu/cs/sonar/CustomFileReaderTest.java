@@ -43,4 +43,26 @@ class CustomFileReaderTest {
         sut.setNewSentence(betterSentence);
         assertEquals(betterSentence, sut.getNewSentence());
     }
+
+    @Test
+    void getCountTest() {
+        assertEquals(0, sut.getCount());
+    }
+
+    @Test
+    void hashTest() {
+        sut.hashCode();
+    }
+
+    @Test
+    void getPathTest() {
+        String s = sut.getPath();
+        assertNotNull(s);
+    }
+
+    @Test
+    void equalsTest() {
+        boolean bool = sut.equals(sut);
+        assertTrue(bool);
+    }
 }
